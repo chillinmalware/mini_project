@@ -8,8 +8,9 @@ class Node:
     """Store one Contact and a reference to the next node."""
 
     def __init__(self, contact: Contact, next_node: Node | None = None) -> None:
-        """Initialize one linked-list node."""
-        pass
+        self.contact = contact
+        self.next_node = next_node
+        
 
 
 class Phonebook:

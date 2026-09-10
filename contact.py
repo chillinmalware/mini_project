@@ -6,30 +6,29 @@ from constants import COUNTRY_CODES
 class Contact:
     """Represent one contact stored by the ASEAN Phonebook."""
 
-    def __init__(
-        self,
-        student_id: str,
-        surname: str,
+    def __init__(self, 
+        student_id: str, 
+        surname: str, 
         given_name: str,
-        occupation: str,
-        country_code: str,
-        area_code: str,
-        local_number: str,
-    ) -> None:
-        """Store all seven contact fields without changing their text."""
-        pass
+        occupation: str, 
+        country_code: str, 
+        area_code: str, 
+        local_number: str,) -> None:
+
+        self.student_id = student_id
+        self.surname = surname
+        self.given_name = given_name
+        self.occupation = occupation
+        self.country_code = country_code
+        self.area_code = area_code
+        self.local_number = local_number
+        
 
     def phone_number(self) -> str:
-        """Return the complete phone number as code-area-local."""
-        pass
+         return self.country_code + "-" + self.area_code + "-" + self.local_number
 
     def sort_key(self) -> tuple[str, str, str]:
-        """Return the surname, given-name, and student-ID sorting key.
-
-        Name comparison must ignore capitalization, but the original stored
-        spelling must remain unchanged.
-        """
-        pass
+         return self.surname.lower(), self.given_name.lower(), self.student_id
 
     def get_field(self, field: str) -> str:
         """Return the current value of one supported UPDATE field."""
